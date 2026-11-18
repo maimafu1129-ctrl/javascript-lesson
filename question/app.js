@@ -127,14 +127,12 @@ console.log(numbers);
 
 // Q5 for × if
 let mixed = [4 , '2', 5, '8', '9', 0, 1]
-    for(let value of mixed) {
-        if(typeof value === 'number') {
-            if (value % 2 === 0) {
-                console.log('even');
-            }else{
-                console.log('odd');
-            }
-    }else{
+    for (let value of mixed) {
+        if (typeof value !== 'number') {
             console.log('not number');
+        } else if (value % 2 === 0) {
+            console.log('even');
+        } else {
+            console.log('odd');
         }
     }
