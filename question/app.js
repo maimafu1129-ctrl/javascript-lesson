@@ -38,7 +38,11 @@ let playerList = [
 console.log(playerList[1].favorites[1]);
 
 // Q5 四則演算
-console.log((playerList[0].age + playerList[1].age + playerList[2].age) / 3);
+let total = 0;
+for (let player of playerList) {
+  total += player.age;
+}
+console.log(total / playerList.length);
 
 // Q6-1 関数
 function sayHello() {
@@ -53,12 +57,16 @@ let sayWorld = function() {
 sayWorld();
 
 // Q7-1 メソッド
-user.birthday = '2000-09-27';
-console.log(user.birthday);
+user.birthday = function() {
+    console.log('2000-09-27');
+};
+user.birthday();
 
 // Q7-2 メソッド
-user.Hello = 'Hello!';
-console.log(user.Hello);
+user.sayHello = function() {
+  console.log('Hello');
+};
+user.sayHello();
 
 // Q8 引数
 let calc = {};
@@ -119,13 +127,13 @@ console.log(numbers);
 
 // Q5 for × if
 let mixed = [4 , '2', 5, '8', '9', 0, 1]
-for(let value of mixed) {
-    if(typeof value === 'number') {
-        if (value % 2 === 0) {
-            console.log('even');
-        }else{
-            console.log('odd');
-        }
+    for(let value of mixed) {
+        if(typeof value === 'number') {
+            if (value % 2 === 0) {
+                console.log('even');
+            }else{
+                console.log('odd');
+            }
     }else{
             console.log('not number');
         }
